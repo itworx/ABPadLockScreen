@@ -33,6 +33,10 @@
 
 @interface ABPadLockScreenSetupViewController : ABPadLockScreenAbstractViewController
 
+@property (nonatomic, copy) NSString *enterPinTitle;
+@property (nonatomic, copy) NSString *confirmPinTitle;
+@property (nonatomic, copy) NSString *pinDoesNotMatchTitle;
+
 @property (nonatomic, weak, readonly) id<ABPadLockScreenSetupViewControllerDelegate> setupScreenDelegate;
 
 - (instancetype)initWithDelegate:(id<ABPadLockScreenSetupViewControllerDelegate>)delegate;

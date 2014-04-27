@@ -88,7 +88,7 @@
         _requiresRotationCorrection = NO;
         
         _enterPasscodeLabel = [self standardLabel];
-        _enterPasscodeLabel.text = NSLocalizedString(@"Enter Passcode", @"");
+        _enterPasscodeLabel.text = NSLocalizedString(@"Passcode", @"");
         
         _detailLabel = [self standardLabel];
         
