@@ -118,6 +118,10 @@
 		_okButton.alpha = 0.0f;
 		_okButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
 		
+        _forgotButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_forgotButton setTitle:NSLocalizedString(@"Forgot?", @"Forgot Passcode button title") forState:UIControlStateNormal];
+        [_forgotButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
+        
         // default to NO
         _complexPin = NO;
     }
@@ -327,6 +331,7 @@
     
     [self.cancelButton setTitleColor:self.labelColor forState:UIControlStateNormal];
     [self.deleteButton setTitleColor:self.labelColor forState:UIControlStateNormal];
+    [self.forgotButton setTitleColor:self.labelColor forState:UIControlStateNormal];
 	[self.okButton setTitleColor:self.labelColor forState:UIControlStateNormal];
 }
 
@@ -426,6 +431,17 @@
     
     self.deleteButton.frame = deleteCancelButtonFrame;
     [self.contentView addSubview:self.deleteButton];
+
+    if (self.forgotButtonEnabled) {
+        CGRect forgotButtonFrame = CGRectMake(lefButtonLeft, zeroRowTop + ABPadButtonHeight, ABPadButtonWidth*2, 20);
+        if(!IS_IPHONE5)
+        {
+            forgotButtonFrame = CGRectMake(lefButtonLeft, zeroRowTop + ABPadButtonHeight - 20, ABPadButtonWidth*2, 20);
+        }
+        self.forgotButton.frame = forgotButtonFrame;
+        [self.contentView addSubview:self.forgotButton];
+    }
+	
 }
 
 - (void)setUpButton:(UIButton *)button left:(CGFloat)left top:(CGFloat)top

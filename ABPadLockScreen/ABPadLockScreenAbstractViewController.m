@@ -72,6 +72,7 @@
     [lockScreenView.cancelButton addTarget:self action:@selector(cancelButtonSelected:) forControlEvents:UIControlEventTouchUpInside];
     [lockScreenView.deleteButton addTarget:self action:@selector(deleteButtonSelected:) forControlEvents:UIControlEventTouchUpInside];
 	[lockScreenView.okButton addTarget:self action:@selector(okButtonSelected:) forControlEvents:UIControlEventTouchUpInside];
+    [lockScreenView.forgotButton addTarget:self action:@selector(forgotButtonSelected:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (NSUInteger)supportedInterfaceOrientations
@@ -202,6 +203,14 @@
     if ([self.delegate respondsToSelector:@selector(unlockWasCancelledForPadLockScreenViewController:)])
     {
         [self.delegate unlockWasCancelledForPadLockScreenViewController:self];
+    }
+}
+
+- (void)forgotButtonSelected:(UIButton *)sender
+{
+    if ([self.delegate respondsToSelector:@selector(forgotPassword:)])
+    {
+        [self.delegate forgotPassword:self];
     }
 }
 

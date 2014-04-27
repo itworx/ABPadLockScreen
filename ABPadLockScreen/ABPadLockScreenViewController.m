@@ -59,6 +59,12 @@
     return self;
 }
 
+-(void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [lockScreenView setForgotButtonEnabled:YES];
+}
+
 #pragma mark -
 #pragma mark - Attempts
 - (void)setAllowedAttempts:(NSInteger)allowedAttempts

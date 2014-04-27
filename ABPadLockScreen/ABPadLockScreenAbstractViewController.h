@@ -56,4 +56,11 @@
 @required
 - (void)unlockWasCancelledForPadLockScreenViewController:(ABPadLockScreenAbstractViewController *)padLockScreenViewController;
 
+@optional
+/**
+ Called when the user cancels the unlock
+ */
+- (void)forgotPassword:(ABPadLockScreenAbstractViewController *)padLockScreenViewController;
+
+
 @end

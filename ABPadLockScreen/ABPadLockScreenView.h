@@ -52,6 +52,10 @@
 
 @property (nonatomic, strong, readonly) UIButton *okButton;
 
+@property (nonatomic, strong, readonly) UIButton *forgotButton;
+@property (nonatomic, assign) BOOL forgotButtonEnabled;
+
+
 /*
  Lazy loaded array that returns all the buttons ordered from 0-9
  */
